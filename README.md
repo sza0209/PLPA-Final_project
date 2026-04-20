@@ -61,8 +61,8 @@ The project follows a structured geospatial machine learning pipeline:
 ---
 
 ## Link to analysis
-- [Land cover model building script](Scripts/landcoverModelScript.md)
-- [Prediction script](Scripts/PredictionScript.md)
+- [Land cover model building script](Scripts/landcoverModelScript.Rmd)
+- [Prediction script](Scripts/PredictionScript.Rmd)
 
 ---
 
