@@ -1,0 +1,82 @@
+---
+title: "Land cover prediction mapping for WMAs in Alabama"
+output: html_document
+date: "2026-04-03"
+---
+
+Loading necessary libraries
+
+```{r}
+require(groundhog)
+groundhog.library('sf', "2024-12-01")
+groundhog.library('tigris', "2024-12-01")
+groundhog.library('geodata', "2024-12-01")
+groundhog.library('dplyr', "2024-12-01")
+groundhog.library('colorspace', "2024-12-01")
+groundhog.library('FedData', "2024-12-01")
+groundhog.library("terra", "2024-12-01")
+groundhog.library('randomForest', "2024-12-01")
+# groundhog.library('terra', "2024-12-01")
+groundhog.library('caret', "2024-12-01")
+```
+
+
+
+Loading fitted model
+
+```{r}
+#Download the file locally first
+download.file("https://github.com/ValenteLab/Sinka-study-files/raw/main/rf_model.RData",
+              destfile = "rf_model.RData", mode = "wb")
+
+# Now load the model
+load("rf_model.RData")
+
+# Check the object
+print(rf_model)
+```
+
+
+Predictions
+
+2024 
+
+```{r}
+#Load stacked predictors
+# StackedPredictors = rast("/vsicurl/https://github.com/ValenteLab/Sinka-study-files/raw/refs/heads/main/StackedPredictors.tif")
+StackedPredictors = rast("StackedPredictors.tif")
+print(StackedPredictors)
+```
+
+
+```{r}
+# Generate predictions for the raster stack using the trained model
+names(StackedPredictors)[names(StackedPredictors) == "2024Nlcd"] <- "X2024Nlcd"
+map <- terra::predict(StackedPredictors, rf_model, type = "response")
+
+# Plot the predicted land cover map
+plot(map, main = "2024 Predicted Land Cover Map")
+```
+
+
+
+2008
+
+```{r}
+#Load stacked predictors
+StackedPredictors2008 = rast("/vsicurl/https://github.com/ValenteLab/Sinka-study-files/raw/refs/heads/main/2008StackedPredictors.tif")
+print(StackedPredictors2008)
+```
+
+
+```{r}
+# Generate predictions for the raster stack using the trained model
+names(StackedPredictors2008) <- c("Blue", "Green", "Red", "NIR", "NDVI", "SAVI", "EVI", "GCVI", "BAI", "contrast", "homogeneity", "entropy", "mean", "USA_elv_msk", "X2024Nlcd", "TCC2021")
+map <- terra::predict(StackedPredictors2008, rf_model, type = "response")
+
+# Plot the predicted land cover map
+plot(map, main = "2008 Predicted Land Cover Map")
+```
+
+
+
