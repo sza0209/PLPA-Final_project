@@ -28,7 +28,7 @@ This project addresses the following question:
 
 ---
 
-## 🧭 Analytical Workflow Summary
+## Analytical Workflow Summary
 
 The project follows a structured geospatial machine learning pipeline:
 
@@ -60,8 +60,15 @@ The project follows a structured geospatial machine learning pipeline:
 
 ---
 
-## Repository Structure
+## Link to analysis
+- [Land cover model building script](Scripts/landcoverModelScript.md)
+- [Prediction script](Scripts/PredictionScript.md)
 
+---
+
+## File tree
+
+```
 ├── model
 │   └── 01_train_model.RData
 ├── PLPA-Final_project.Rproj
@@ -70,6 +77,7 @@ The project follows a structured geospatial machine learning pipeline:
 └── Scripts
     ├── landcoverModelScript.Rmd
     └── PredictionScript.Rmd
+```
 
 ---
 

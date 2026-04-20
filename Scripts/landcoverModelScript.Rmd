@@ -1,7 +1,11 @@
 ---
-title: "Land cover model for WMAs in Alabama"
-output: html_document
+title: "Landcover model building"
+author: "Sinka Khadijah Abubakar"
 date: "2026-04-03"
+output:
+  md_document:
+    variant: markdown_github
+  html_document: default
 ---
 
 Loading necessary libraries
