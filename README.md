@@ -24,7 +24,7 @@ All analysis is fully scripted in R and designed to be reproducible from raw dat
 
 This project addresses the following question:
 
-> How well does a Random Forest land cover classification model trained on one spatial context generalize when applied to new Wildlife Management Areas and new Landsat 8/9 imagery (2024), and how does classification accuracy compare to reference datasets and field validation data?
+> How well does a Random Forest land cover classification model trained on one spatial context generalize when applied to new Landsat 8/9 imagery from a different time point, and how does classification accuracy compare to reference datasets and field validation data?
 
 ---
 
@@ -45,7 +45,7 @@ The project follows a structured geospatial machine learning pipeline:
 - Construction of a multi-layer raster stack
 
 ### 3. Model application
-- Load previously trained Random Forest model
+- Build and load trained Random Forest model
 - Apply model to stacked predictor raster
 - Generate spatial land cover classification map
 
@@ -70,7 +70,7 @@ The project follows a structured geospatial machine learning pipeline:
 
 ```
 ├── model
-│   └── 01_train_model.RData
+│   └── rf_model.RData
 ├── PLPA-Final_project.Rproj
 ├── Proposal.docx
 ├── README.md
@@ -121,7 +121,7 @@ The project follows a structured geospatial machine learning pipeline:
 
 This project was developed using:
 
-- R version ≥ 4.2.0
+- R version ≥ 4.5.1
 - RStudio IDE
 
 ### Main required packages
