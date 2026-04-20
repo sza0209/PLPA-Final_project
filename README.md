@@ -1,10 +1,10 @@
-# Land Cover Classification and Model Transferability in Alabama Wildlife Management Areas
+# Land cover classification and model transferability in Alabama Wildlife Management Areas
 
 Author
 
 Sinka Khadijah Abubakar
 
-## Project Overview
+## Project overview
 
 This project develops a fully reproducible geospatial workflow to apply a previously trained Random Forest land cover classification model to Landsat 8/9 imagery (2024) across multiple Wildlife Management Areas (WMAs) in Alabama.
 
@@ -20,7 +20,7 @@ All analysis is fully scripted in R and designed to be reproducible from raw dat
 
 ---
 
-## Research Question
+## Research question
 
 This project addresses the following question:
 
@@ -28,7 +28,7 @@ This project addresses the following question:
 
 ---
 
-## Analytical Workflow Summary
+## Analytical workflow summary
 
 The project follows a structured geospatial machine learning pipeline:
 
@@ -81,9 +81,9 @@ The project follows a structured geospatial machine learning pipeline:
 
 ---
 
-## Data Sources and Description
+## Data sources and description
 
-### Landsat 8/9 Surface Reflectance (2024)
+### Landsat 8/9 surface reflectance (2024)
 - Source: USGS Earth Explorer  
 - https://earthexplorer.usgs.gov/  
 - Multispectral satellite imagery used to derive spectral predictors for classification
@@ -104,27 +104,27 @@ The project follows a structured geospatial machine learning pipeline:
 
 ---
 
-### Wildlife Management Area Boundaries
+### Wildlife Management Area boundaries
 - Source: Alabama GIS datasets / custom shapefile  
 - Defines spatial extent of analysis
 
 ---
 
-### Field Validation Data
+### Field validation data
 - GPS-collected ground reference points  
 - Converted from CSV to shapefile format  
 - Used for independent accuracy assessment of classification output
 
 ---
 
-## Software Environment
+## Software environment
 
 This project was developed using:
 
 - R version ≥ 4.2.0
 - RStudio IDE
 
-### main required packages
+### Main required packages
 
 - terra (raster processing and spatial analysis)
 - sf (vector spatial data handling)
