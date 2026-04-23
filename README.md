@@ -81,7 +81,11 @@ The project follows a structured geospatial machine learning pipeline:
 
 ---
 
-## Data sources and description
+## Data sources, access and description
+
+Due to the large size of geospatial raster datasets (Landsat imagery, NLCD, and Tree Canopy Cover layers), these files exceed GitHub’s file size limits for standard repositories. To ensure accessibility while maintaining reproducibility, all large geospatial datasets are hosted in a separate, shared laboratory GitHub repository with expanded storage capacity. The link to that repository is provided below:
+
+Data repository: 
 
 ### Landsat 8/9 surface reflectance (2024)
 - Source: USGS Earth Explorer  
